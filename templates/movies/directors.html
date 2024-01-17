@@ -1,0 +1,30 @@
+<div class="container" style="width: 60%;">
+    <table class="table table-striped table-hover" data-toggle="table" id="artists">
+        <thead>
+        <tr>
+            <th data-sortable="true">#</th>
+            <th>Director</th>
+            <th data-sortable="true">Name</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for person in people %}
+                <tr>
+                    <td class="m">{{ person.my_id }}</td>
+                    {% if person.headshot %}
+                        <td class="m"><img src="{{ person.headshot }}" alt="{{ person.name }}"></td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                    <td>{{ person.name }}</td>
+                    <td class="m" style="text-align: center;">
+                        <form action="/movieSearchByDirector" method="post">
+                            <button class="btn" type="submit" name="button" value="{{ person.personID }}">Movies</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

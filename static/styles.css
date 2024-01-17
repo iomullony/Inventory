@@ -1,0 +1,154 @@
+/* Background colour */
+.bg {
+    background-color: #9a5dc2;
+}
+
+/* Navigation bar font size */
+.nav-link {
+    font-size: 20px;
+}
+
+/* Main button colours */
+.btn {
+    /* background-color: #C9A6F1; */
+    background-color: #fff;
+    border: 1px solid #9a5dc2;
+    color: #9a5dc2;;
+}
+
+/* Main button hover */
+.btn:hover {
+    background-color: #9a5dc2;
+    color: #fff;
+}
+
+/* Make search button bigger */
+.search-button {
+    padding: 12px 28px;
+}
+
+/* Back button */
+.back {
+    position: absolute;
+    margin: 10px;
+    left: 10px;
+    top: 80px;
+}
+
+/* Footer colours and font */
+footer {
+    margin-top: auto;
+    bottom: 0;
+    padding: 10px 15px 10px 15px;
+    width: 100%;
+    background: #9a5dc2;
+    color: #fff;
+    font-size: 12px;
+    text-align: right;
+}
+
+/* Some useful features for the body */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container, mostly for the tables */
+.container {
+    padding-top: 40px;
+    width: 85%;
+}
+
+/* Some table features */
+.table {
+    text-align: left;
+}
+
+td {
+    width: auto;
+}
+
+/* To have the column exactly the size of the information */
+td.m {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* To have the column minimum the size of the information */
+td.min {
+    min-width: 1%;
+    white-space: nowrap;
+}
+
+/* To make the covers with a right size */
+.poster {
+    width: 50px;
+    height: 74px;
+}
+
+/* For the  music search */
+.musicSearch {
+    margin-right: 10px;
+}
+
+/* For the movie search */
+.movieSearch {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    grid-column-gap: 18px;
+}
+
+/* To make the covers with a right size in details */
+.posterDetails {
+    width: 130px;
+    height: 193px;
+}
+
+/* To style details page */
+.detailsContainer {
+    display: flex;
+}
+
+/* Some information about the movie */
+.details {
+    margin-left: 10px;
+    text-align: left;
+}
+
+/* Make this header bigger */
+h1 {
+    font-size: 50px;
+}
+
+/* Format text for the plot */
+.plot {
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* Cover images sizes */
+.musicCovers {
+    width: 60px;
+    height: 60px;
+}
+
+/* Container for main page */
+.index {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    padding-top: 30px;
+    grid-column-gap: 50px;
+}
+
+.table.fav > tbody > tr:nth-child(2n - 1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #F2E6FF;
+}
+
+/* Main page title */
+h2 {
+    color: #591A9E;
+}

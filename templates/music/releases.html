@@ -1,0 +1,30 @@
+<div class="container">
+    <table class="table table-striped table-hover" data-toggle="table">
+        <thead>
+        <tr>
+            <th data-sortable="true">#</th>
+            <th data-sortable="true">Title</th>
+            <th data-sortable="true">Artist</th>
+            <th data-sortable="true">Country</th>
+            <th data-sortable="true">Date</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for release in releases %}
+                <tr>
+                    <td class="m">{{ release.my_id }}</td>
+                    <td>{{ release.title }}</td>
+                    <td>{{ release["artist-credit-phrase"] }}</td>
+                    <td>{{ release.country }}</td>
+                    <td class="min">{{ release.date }}</td>
+                    <td class="m" style="text-align: center;">
+                        <form action="/recordings" method="post">
+                            <button class="btn" type="submit" name="button" value="{{ release.id }}">More</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

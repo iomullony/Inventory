@@ -1,0 +1,39 @@
+<div class="container">
+    <table class="table table-striped table-hover" data-toggle="table" id="artists">
+        <thead>
+        <tr>
+            <th data-sortable="true">#</th>
+            <th data-sortable="true">Cover</th>
+            <th data-sortable="true">Title</th>
+            <th data-sortable="true">Year</th>
+            <th data-sortable="true">Type</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <td class="m">{{ movie.my_id }}</td>
+                    {% if movie["cover url"] %}
+                        <td class="m"><img class="poster" src="{{ movie['cover url'] }}" alt="{{ movie.name }}"></td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+                    <td>{{ movie.title }}</td>
+                    <td class="min">{{ movie.year }}</td>
+                    <td class="min">{{ movie.kind }}</td>
+
+                    <td class="m" style="text-align: center;">
+                        {% if movie.add == True %}
+                        <form action="/addMovie" method="post">
+                            <button class="btn" type="submit" name="add" value="{{ movie.movieID }}">Add</button>
+                        </form>
+                        {% else %}
+                            <button class="btn" style="background-color: #C9A6F1; color:#fff" disabled>Added</button>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

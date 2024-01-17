@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h2>My Inventory, where you can save your favourite music and movies</h2>
+    <!-- <img src="images/books.jpg" alt="Books"> -->
+    <div class="index">
+            <!-- Favourite artists -->
+            <div>
+                <h5>Favourite Artists</h5>
+                <div>
+                    <table class="table fav table-hover" data-toggle="table" id="artists">
+                        <thead>
+                        <tr>
+                            <th data-sortable="true">Name</th>
+                            <th data-sortable="true">Songs</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for artist in artists %}
+                                <tr>
+                                    <td>{{ artist.name }}</td>
+                                    <td style="text-align: center;">{{ artist.count }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Favourite movie genres -->
+            <div>
+                <h5>Favourite Movie Genres</h5>
+                <div>
+                    <table class="table fav table-hover" data-toggle="table" id="artists">
+                        <thead>
+                        <tr>
+                            <th data-sortable="true">Genre</th>
+                            <th data-sortable="true">Movies</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for genre in genres %}
+                                <tr>
+                                    <td>{{ genre.name }}</td>
+                                    <td style="text-align: center;">{{ genre.count }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+{% endblock %}

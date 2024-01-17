@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Music
+{% endblock %}
+
+{% block main %}
+    <div class="back">
+        <button class="btn" onclick="window.location.href='/music'">&#8592;</button>
+    </div>
+    <div>
+        <form action="/musicSearch" method="post">
+            <!-- Text boxes -->
+            <input class="musicSearch" autocomplete="off" autofocus name="artist" placeholder="Artist" type="text">
+            <input class="musicSearch" autocomplete="off" autofocus name="title" placeholder="Title" type="text">
+            <!-- Button -->
+            <button class="btn" type="submit">Search</button>
+        </form>
+    </div>
+    <!-- Error message if something is missing -->
+    {% if invalid %}
+        You have to fill in at least one field
+    {% endif %}
+    <!-- Show artists search results -->
+    {% if search == "Artists" %}
+        {% include '/music/artists.html' %}
+    {% endif %}
+    <!-- Show titles search results -->
+    {% if search == "Titles" %}
+        {% include '/music/titles.html' %}
+    {% endif %}
+    <!-- Show releases search results -->
+    {% if search == "Releases" %}
+        {% include '/music/releases.html' %}
+    {% endif %}
+    <!-- Show recordings search results -->
+    {% if search == "Recordings" %}
+        {% include '/music/recordings.html' %}
+    {% endif %}
+{% endblock %}

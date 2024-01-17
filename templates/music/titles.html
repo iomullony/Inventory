@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table table-striped table-hover" data-toggle="table">
+        <thead>
+        <tr>
+            <th data-sortable="true">#</th>
+            <th data-sortable="true">Title</th>
+            <th data-sortable="true">Artist</th>
+            <th data-sortable="true">Date</th>
+            <th data-sortable="true">Type</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for title in titles %}
+                <tr>
+                    <td>{{ title.my_id }}</td>
+                    <td>{{ title.title }}</td>
+                    <td>{{ title["artist-credit-phrase"] }}</td>
+                    <td class="min">{{ title["first-release-date"] }}</td>
+                    <td class="min">{{ title.type }}</td>
+                    <td style="text-align: center;">
+                        <form action="/releases" method="post">
+                            <button class="btn" type="submit" name="button" value="{{ title.id }}">More</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% if more %}
+    <br>
+    <form action="/more" method="post">
+        <button class="btn" type="submit" name="more" value="{{ id }}">Show More</button>
+    </form>
+    {% endif %}
+</div>

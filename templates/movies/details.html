@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Details
+{% endblock %}
+
+{% block main %}
+    <div class="back">
+        <button class="btn" onclick="window.location.href='/movies'">&#8592;</button>
+    </div>
+    <div class="container">
+        <div class="detailsContainer">
+            <!-- Poster -->
+            <img class="posterDetails" src="{{ movie['full-size cover url'] }}" alt="{{ movie.name }}">
+            <div class="details">
+                <!-- Title -->
+                <h1>{{ movie.title }}</h1>
+                <!-- Some info -->
+                <div>
+                    {{ movie.year }}&nbsp;&nbsp;&nbsp;&nbsp;
+                    {{movie.info }}&nbsp;&nbsp;&nbsp;&nbsp;
+                    Genres: {{ movie.genres }}
+                    <p>
+                        {% if movie.kind == "movie" or movie.kind == "tv movie" or movie.kind == "video game" or movie.kind == "video movie" %}
+                            Director: {{ movie.director }}&nbsp;&nbsp;&nbsp;&nbsp;
+                        {% endif %}
+                        {% if movie.kind == "tv series" or movie.kind == "tv mini series" %}
+                            Creator: {{ movie.creator }}&nbsp;&nbsp;&nbsp;&nbsp;
+                        {% endif %}
+                        Stars: {{  movie.cast }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Plot -->
+        <div class="plot">
+            {% for plot in movie.plot %}
+            <p>{{ plot }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

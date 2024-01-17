@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Movies
+{% endblock %}
+
+{% block main %}
+    <div class="back">
+        <button class="btn" onclick="window.location.href='/movies'">&#8592;</button>
+    </div>
+    <div>
+        <form class="movieSearch" action="/movieSearch" method="post">
+            <!-- Text box -->
+            <input autocomplete="off" autofocus name="query" placeholder="Query" type="text">
+            <!-- Select option -->
+            <select class="form-select mx-auto w-auto" name="option">
+                <option disabled selected>Option</option>
+                {% for option in options %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+            <!-- Button -->
+            <button class="btn" type="submit">Search</button>
+        </form>
+    </div>
+    <!-- Error message if something is missing -->
+    {% if invalid %}
+        {{ invalid }}
+    {% endif %}
+        <!-- Show titles search results -->
+        {% if search == "Titles" %}
+            {% include '/movies/titles.html' %}
+        {% endif %}
+        <!-- Show actors search results -->
+        {% if search == "Actors" %}
+            {% include '/movies/actors.html' %}
+        {% endif %}
+        <!-- Show releases search results -->
+        {% if search == "Directors" %}
+            {% include '/movies/directors.html' %}
+        {% endif %}
+{% endblock %}
