@@ -11,6 +11,10 @@ For music 'musicbrainz':
 For movies: 'imdb':
 `pip install IMDbPY`
 
+To run the project use in the command line `flask run`
+
+To see the database you can use sqlite3 and the `.open FILENAME`
+
 To be able to have a session in my website I used the resources given in the problem set of week 09, in addition to taking it a little bit as a model to develop
 my website.
 
