@@ -18,7 +18,7 @@ To see the database you can use sqlite3 and the `.open FILENAME`
 To be able to have a session in my website I used the resources given in the problem set of week 09, in addition to taking it a little bit as a model to develop
 my website.
 
-A general problem I encountered was to put back buttons, I was thinking about putting a back button whe you are seasrching for something, wether is a song or a
+A general problem I encountered was to put back buttons, I was thinking about putting a back button when you are searching for something, wether it s a song or a
 movie. But because I'm using forms it's not really possible, and more because I'm using the POST method. So because I'm not saving any cache information I would
 say it is impossible to go back as I wanted, so if you want to get some other information you have to do the whole search again, unless you use the back button
 of the browser itself and then relaod the page.
@@ -88,16 +88,16 @@ it would have been useful if musicbrainz had something to get their pictures, bu
 ## Database ##
 I have my own database called inventory.db, feel free to use sqlite3 in the terminal to open it and see its contents. As an overview, it has 7 tables:
 
-**users:** Information for the user's sessions, saving their username and password, plus an ID.
+- **users:** Information for the user's sessions, saving their username and password, plus an ID.
 
-**music:** Save useful information about your saved songs.
+- **music:** Save useful information about your saved songs.
 
-**movies:** Save useful information about your saved movies.
+- **movies:** Save useful information about your saved movies.
 
-**genres:** To save all genres, each one will have a unique ID and its name.
+- **genres:** To save all genres, each one will have a unique ID and its name.
 
-**movie_genres:** To save the genres of each movie.
+- **movie_genres:** To save the genres of each movie.
 
-**artists:** To save all artists, each one will have a unique ID and their name.
+- **artists:** To save all artists, each one will have a unique ID and their name.
 
-**song_artists:** To save the artists of each song.
+- **song_artists:** To save the artists of each song.
